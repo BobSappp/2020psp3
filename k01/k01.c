@@ -28,7 +28,7 @@ void PrintArray(City city[], int size)
     int i;
 
     for (i=0; i<size; i++) {
-        PrintCity(city[i]);
+        PrintCity(city[i]); 
     }
 }
 
@@ -64,14 +64,36 @@ int LoadData(City arrayCity[])
 
 int LinearSearch(int key, City arrayCity[], int size)
 {
-    //  ここを実装する
+    int pos;
+    int result;
+    for(pos=0;pos<size;pos++){
+        if(key == arrayCity[pos].id){
+            result = pos;
+            break;
+        }else{
 
-
+        }
+    }return result;
 }
 
 int BinarySearch(int key, City arrayCity[], int left, int right)
 {
     //  ここを実装する
+    int pos;
+    int result;
+    result=-1;
+    left=0; right=MAX_CITY -1;
+    while(left <= right){
+        pos = left + (right-left)/2;
+        if(key == arrayCity[pos].id){
+            result = pos;
+            break;
+        }else if(key > arrayCity[pos].id){
+            left = pos + 1;
+        }else{
+            right = pos - 1;
+        }
+    }
 
 
 }
