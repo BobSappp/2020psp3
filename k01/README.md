@@ -69,6 +69,7 @@ typedef struct {
 86　while文で繰り返し
 88 if文であっていたら出力して
 　　keyがちがうのならばずらす
+
 ## 出力結果
 
 ===== linear search =====

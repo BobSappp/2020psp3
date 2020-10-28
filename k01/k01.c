@@ -100,6 +100,7 @@ int BinarySearch(int key, City arrayCity[], int left, int right)
 
 
 
+
 int main(void)
 {
     int key;
