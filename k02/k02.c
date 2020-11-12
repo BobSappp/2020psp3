@@ -105,7 +105,7 @@ int SearchCityByName(Node* pList, char* cityName, City* pCity)
 int SearchCityByID(Node* pList, int ID, City* pCity)
 {
     // ここを実装する
-    int i=0;
+    int i=-1;
     printf("ID: , &a");
     while(pList!=NULL){
         i++;

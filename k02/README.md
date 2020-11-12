@@ -75,7 +75,7 @@ typedef struct {
     pNode->pNext = pNext;　次のpNextに入れる
     return pNode;
 課題２
-int i=0;宣言
+int i=-1;宣言
     printf("ID: , &a");IDをとる
     while(pList!=NULL){
         i++;何番目か数える
