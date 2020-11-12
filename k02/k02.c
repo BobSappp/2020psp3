@@ -136,7 +136,6 @@ int main(void)
     }
 
 
-
     Node* pTop = NULL;  //  リストの先頭
     City city;  //　市町村別データ
     int cn = 0; // 市の数
