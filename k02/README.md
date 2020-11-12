@@ -74,6 +74,7 @@ typedef struct {
     pNode->city = newCity;  データを代入
     pNode->pNext = pNext;　次のpNextに入れる
     return pNode;
+    
 課題２
 int i=0;宣言
     printf("ID: , &a");IDをとる
