@@ -84,6 +84,7 @@ void BubbleSort(City arrayCity[], int size)
     while(cnt==0){
         cnt = 0;
         for(pos=0;pos<size-1;pos++){
+            
 
             if(arrayCity->total[]>&arrayCity->total[pos+1]){
                 cnt ++;
