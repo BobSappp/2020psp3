@@ -50,6 +50,7 @@ char* BMSearch(char text[], char key[])
     for(i=0;key[i]<=255;i++){
         table[i]=key_len+1;
     }
+    
 
     for(i=0;key[i]!='\0';i++){
         table[(unsigned char)key[i]]=key_len-i;
