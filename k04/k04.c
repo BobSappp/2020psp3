@@ -116,10 +116,14 @@ while(1) {
         }
     while(j>=left){
         if(pivot>=arrayCity[j].seafood){
+            break;
         }
         j--;
     }
     if (i>=j) {
+        tmp2 = arrayCity[left];
+        arrayCity[left] = arrayCity[j];
+        arrayCity[j] = tmp2;
     break;
     //ループから抜ける
     } else {
@@ -131,9 +135,6 @@ while(1) {
     }
 }
 //pivotとjの値を⼊替
-tmp2 = arrayCity[left];
-arrayCity[left] = arrayCity[j];
-arrayCity[j] = tmp2;
 //左側をQuickSort
 QuickSort(arrayCity, left, j-1);
 //右側をQuickSort
