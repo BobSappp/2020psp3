@@ -103,9 +103,9 @@ void QuickSort(City arrayCity[], int left, int right)
     //  ここを実装する
     int i, j, pivot;
     City tmp1, tmp2;
-    i=left;
-    j=right;
         if (right-left+1>1){
+            i=left;
+            j=right;
     pivot=arrayCity[left].seafood;
 while(1) {
     while(i<=right){
@@ -131,8 +131,8 @@ while(1) {
     }
 }
 //pivotとjの値を⼊替
-tmp2 = arrayCity[pivot];
-arrayCity[pivot] = arrayCity[j];
+tmp2 = arrayCity[left];
+arrayCity[left] = arrayCity[j];
 arrayCity[j] = tmp2;
 //左側をQuickSort
 QuickSort(arrayCity, left, j-1);
