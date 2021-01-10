@@ -79,51 +79,66 @@ int LoadData(City arrayCity[])
 void BubbleSort(City arrayCity[], int size)
 {
     //  ここを実装する
-    int cnt, pos, i;
-    int* k1, k2;
-    while(cnt==0){
+    int cnt=1, pos;
+    City i;
+    size = MAX_CITY;
+    while(cnt!=0){
         cnt = 0;
         for(pos=0;pos<size-1;pos++){
 
-    
-
-            if(arrayCity->total[]>&arrayCity->total[pos+1]){
+            if(arrayCity[pos].total>arrayCity[pos+1].total){
                 cnt ++;
-                k1 = &arrayCity->total;
+                i = arrayCity[pos];
+                arrayCity[pos]=arrayCity[pos+1];
+                arrayCity[pos+1] = i;
                 //irekae
             }
         }
-        break;
     }
-
 }
 
 
 void QuickSort(City arrayCity[], int left, int right)
 {
     //  ここを実装する
-    int i, j;
-        if (要素数が1より多い){
+    int i, j, pivot;
+    City tmp1, tmp2;
     i=left;
     j=right;
-    pivot=arrayCity[left];
+        if (right-left+1>1){
+    pivot=arrayCity[left].seafood;
 while(1) {
-    while( ) {
+    while(i<=right){
+        if(pivot<arrayCity[i].seafood) {
+        break;
         }
-    while( ) {
+        i++;
         }
+    while(j>=left){
+        if(pivot>=arrayCity[j].seafood){
+        }
+        j--;
+    }
     if (i>=j) {
+    break;
     //ループから抜ける
     } else {
     //iの場所の値と
     //jの場所の値を⼊れ替える
+    tmp1 = arrayCity[i];
+    arrayCity[i] = arrayCity[j];
+    arrayCity[j] = tmp1;
     }
 }
 //pivotとjの値を⼊替
+tmp2 = arrayCity[pivot];
+arrayCity[pivot] = arrayCity[j];
+arrayCity[j] = tmp2;
 //左側をQuickSort
+QuickSort(arrayCity, left, j-1);
 //右側をQuickSort
+QuickSort(arrayCity, j+1, right);
 }
-
 }
 
 void HeapSort(City arrayCity[], int size)
