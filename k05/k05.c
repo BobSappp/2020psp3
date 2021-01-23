@@ -106,9 +106,47 @@ int StackIsEmpty(void)
 void DepthFirstSearch(int size, int matrix[size][size], int start)
 {
     //  ここを実装する
+    int visited[size];
+    int i, val, count=0;
+    //visitedを初期化
+    for(i=0;i<size;i++){
+        visited[i]=0;
+    }
+    //Stackを初期化(StackInit)
+    StackInit;
+    //出発点をPush(StackPush)
+    StackPush(0);
+    while (StackIsEmpty() == FALSE){
+        //スタックから取り出し(StackPop())
+        val = StackPop();
+        if (visited[val] == 0){
+        //⾏ったことがあるにする
+        visited[val]=1;
+        //その場所から⾏ける場所をスタックに⼊れる
+        for(i=0;i<size;i++){
+            if(matrix[val][i]!=0){
+                StackPush(i);
+            }
+        }
+        //(⾏ける場所は複数ある場合がある)
+
+        //必要に応じてStackPush
+        }
+    }
+    printf("DepthFirstSearch\n");
+    for(i=0;i<size;i++){
+        if(visited[i]=1){
+            count ++;
+        }
+    }
+    if(count>=8){
+        printf("    congratulation\n");
+    }
+    else{
+        printf("    fail\n");
+    }
 
 }
-
 
 
 #define QUEUE_MAX   10
@@ -172,7 +210,44 @@ int QueueIsEmpty()
 void BreadthFirstSearch(int size, int matrix[size][size], int start)
 {
     //  ここを実装する
-
+    int visited[size];
+    int val, i, count;
+    //visitedを初期化
+      for(i=0;i<size;i++){
+        visited[i]=0;
+    }
+    InitQueue;
+    //キューを初期化(QueueInit)
+    EnQueue:0;
+    //出発点をキューに⼊れる(EnQueue)
+    while (QueueIsEmpty()== FALSE) {
+        val = DeQueue();
+        //キューから取り出し(DeQueue())
+        if (visited[val] == 0) {
+        visited[val]=1;
+        //⾏ったことがあるにする
+        for(i=0;i<size;i++){
+            if(matrix[val][i]!=0){
+                EnQueue(i);
+            }
+        }
+        //その場所から⾏ける場所をキューに⼊れる
+        //(⾏ける場所は複数ある場合がある)
+        //必要に応じてEnQueue
+        }
+    }
+     printf("BreadthFirstSearch\n");
+    for(i=0;i<size;i++){
+        if(visited[i]=1){
+            count ++;
+        }
+    }
+    if(count>=8){
+        printf("    congratulation\n");
+    }
+    else{
+        printf("    fail\n");
+    }
 }
 
 
