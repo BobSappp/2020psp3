@@ -135,7 +135,7 @@ void DepthFirstSearch(int size, int matrix[size][size], int start)
     }
     printf("DepthFirstSearch\n");
     for(i=0;i<size;i++){
-        if(visited[i]=1){
+        if(visited[i]==1){
             count ++;
         }
     }
@@ -230,7 +230,7 @@ void BreadthFirstSearch(int size, int matrix[size][size], int start)
             if(matrix[val][i]!=0){
                 EnQueue(i);
             }
-            
+
         }
         //その場所から⾏ける場所をキューに⼊れる
         //(⾏ける場所は複数ある場合がある)
@@ -239,7 +239,7 @@ void BreadthFirstSearch(int size, int matrix[size][size], int start)
     }
      printf("BreadthFirstSearch\n");
     for(i=0;i<size;i++){
-        if(visited[i]=1){
+        if(visited[i]==1){
             count ++;
         }
     }
