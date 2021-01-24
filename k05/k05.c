@@ -230,6 +230,7 @@ void BreadthFirstSearch(int size, int matrix[size][size], int start)
             if(matrix[val][i]!=0){
                 EnQueue(i);
             }
+            
         }
         //その場所から⾏ける場所をキューに⼊れる
         //(⾏ける場所は複数ある場合がある)
