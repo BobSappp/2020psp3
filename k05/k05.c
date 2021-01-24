@@ -113,7 +113,7 @@ void DepthFirstSearch(int size, int matrix[size][size], int start)
         visited[i]=0;
     }
     //Stackを初期化(StackInit)
-    StackInit;
+    StackInit();
     //出発点をPush(StackPush)
     StackPush(start);
     while (StackIsEmpty() == FALSE){
@@ -216,7 +216,7 @@ void BreadthFirstSearch(int size, int matrix[size][size], int start)
       for(i=0;i<size;i++){
         visited[i]=0;
     }
-    InitQueue;
+    InitQueue();
     //キューを初期化(QueueInit)
     EnQueue(start);
     //出発点をキューに⼊れる(EnQueue)
