@@ -68,7 +68,7 @@ int LoadData(Menu arrayItem[])
 
 void DynamicProgLimited(Menu arrayItem[], int items, int nap_size)
 {
-    int i, j, k, w, v, A;
+    int i, j, k, w, v, A, p, q;
     int nap_value[items+1][nap_size + 1];   //  動的計画法で作成するテーブル
     int history[items+1][nap_size + 1];     //  履歴を保存するテーブル(選択したメニューを探すときに使用)
 
@@ -85,10 +85,17 @@ void DynamicProgLimited(Menu arrayItem[], int items, int nap_size)
         v = arrayItem[i-1].calorie;
         for(j=1;j<=nap_size;j++){
             if(j < w){
-                nap_value[i][j] = nap_value[i-1][j];
+                p = nap_value[i-1][j];
+                nap_value[i][j] = p;
             }
             else{
-                nap_value[i][j] = nap_value[i-1][j-w] + v;
+                q = nap_value[i-1][j-w] + v;
+                if(q>p){
+                    nap_value[i][j] = q;
+                }
+                else{
+                    nap_value[i][j] = q;
+                }
             }
         }
     }
