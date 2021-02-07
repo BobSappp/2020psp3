@@ -81,7 +81,6 @@ void BubbleSort(City arrayCity[], int size)
     //  ここを実装する
     int cnt=1, pos;
     City i;
-    size = MAX_CITY;
     while(cnt!=0){
         cnt = 0;
         for(pos=0;pos<size-1;pos++){

@@ -68,12 +68,32 @@ int LoadData(Menu arrayItem[])
 
 void DynamicProgLimited(Menu arrayItem[], int items, int nap_size)
 {
+    int i, j, k, w, v, A;
     int nap_value[items+1][nap_size + 1];   //  動的計画法で作成するテーブル
     int history[items+1][nap_size + 1];     //  履歴を保存するテーブル(選択したメニューを探すときに使用)
 
     //　ここを実装する
-
-
+    // 表の初期化
+    for(i=1;i<=items;i++){
+        for(j=1;j<=nap_size;j++){
+            nap_value[i][j] = 0;
+        }
+    }
+    // 商品ループ
+    for(i=1;i<=items;i++){
+        w = arrayItem[i-1].price;
+        v = arrayItem[i-1].calorie;
+        for(j=1;j<=nap_size;j++){
+            if(j < w){
+                nap_value[i][j] = nap_value[i-1][j];
+            }
+            else{
+                nap_value[i][j] = nap_value[i-1][j-w] + v;
+            }
+        }
+    }
+    A=nap_value[items][nap_size];
+    printf("最大消費カロリー；%d", A);
 }
 
 
